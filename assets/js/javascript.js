@@ -5,15 +5,15 @@ function sendMoney(){
    var enterAmount = parseInt(document.getElementById("enterAmount").value);
 
    if (enterAmount > 10000) {
-      alert("Insufficient Balance!!")
+      alert("Can't send more than 10000 in a transaction !!")
    } else {
       var findUserBankAccount = enterName + "BankBalance";
       var finalAmount = parseInt(document.getElementById(findUserBankAccount).innerHTML) + enterAmount;
-      var myAccountBalance = parseInt(document.getElementById("myAccountBalance").innerText) - enterAmount
-      document.getElementById("myAccountBalance").innerText = myAccountBalance
+      var myAccountBalance = parseInt(document.getElementById("myAccountBalance").innerText) - enterAmount;
+      document.getElementById("myAccountBalance").innerText = myAccountBalance;
       document.getElementById(findUserBankAccount).innerHTML = finalAmount;
-      alert(`Successful Transaction !!  
-      $${enterAmount} is sent to ${enterName}@email.com.`)
+      alert("Successful Transaction !!")
+     
 
       // transaction history 
       var createPTag = document.createElement("li");
